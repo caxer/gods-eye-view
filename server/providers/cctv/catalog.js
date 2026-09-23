@@ -17,6 +17,7 @@ import {
   loadWarendorfSourcesFromCatalog,
   loadNswSourcesFromOpenData,
   loadCalgarySourcesFromOpenData,
+  loadDelDOTSourcesFromOpenData,
 } from './sources.js';
 import {
   loadTaiwanFreewaySourcesFromOpenData,
@@ -89,6 +90,11 @@ const LIVE_PACKS = [
     name: 'calgary',
     enabled: () => envEnabled('CCTV_CALGARY_ENABLED'),
     load: loadCalgarySourcesFromOpenData,
+  },
+  {
+    name: 'deldot',
+    enabled: () => envEnabled('CCTV_DELDOT_ENABLED'),
+    load: loadDelDOTSourcesFromOpenData,
   },
   {
     name: 'taiwan-freeway',
